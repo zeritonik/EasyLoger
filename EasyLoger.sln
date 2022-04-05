@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1778
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EasyLoger", "EasyLoger\EasyLoger.vcxproj", "{1DA05EC6-639C-4CC4-A92E-77D64BCB98BA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tester", "Tester\Tester.vcxproj", "{19C0A04C-C160-4F47-8591-B2FF66604A84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DA05EC6-639C-4CC4-A92E-77D64BCB98BA}.Debug|x64.ActiveCfg = Debug|x64
+		{1DA05EC6-639C-4CC4-A92E-77D64BCB98BA}.Debug|x64.Build.0 = Debug|x64
+		{1DA05EC6-639C-4CC4-A92E-77D64BCB98BA}.Release|x64.ActiveCfg = Debug|x64
+		{1DA05EC6-639C-4CC4-A92E-77D64BCB98BA}.Release|x64.Build.0 = Debug|x64
+		{19C0A04C-C160-4F47-8591-B2FF66604A84}.Debug|x64.ActiveCfg = Debug|x64
+		{19C0A04C-C160-4F47-8591-B2FF66604A84}.Debug|x64.Build.0 = Debug|x64
+		{19C0A04C-C160-4F47-8591-B2FF66604A84}.Release|x64.ActiveCfg = Debug|x64
+		{19C0A04C-C160-4F47-8591-B2FF66604A84}.Release|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A20A19DE-63A6-44F4-B6D3-6453D2D7981C}
+	EndGlobalSection
+EndGlobal
