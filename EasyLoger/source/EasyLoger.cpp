@@ -26,26 +26,11 @@ void EasyLoger::ColorOutput(const std::string& text, WORD attribute) const
 	printf("%s\n", text.c_str());
 	SetConsoleTextAttribute(output_handle, default_attribute);
 }
-
-
-void EasyLoger::info(const std::string& text) const
+void EasyLoger::ColorOutput(const long long num, WORD attribute) const
 {
-	ColorOutput(text, default_attribute);
-}
-
-void EasyLoger::special_info(const std::string& text) const
-{
-	ColorOutput(text, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-}
-
-void EasyLoger::warn(const std::string& text) const
-{
-	ColorOutput(text, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
-}
-
-void EasyLoger::error(const std::string& text) const
-{
-	ColorOutput(text, FOREGROUND_RED | FOREGROUND_INTENSITY);
+	SetConsoleTextAttribute(output_handle, attribute);
+	printf("%lli\n", num);
+	SetConsoleTextAttribute(output_handle, default_attribute);
 }
 
 
@@ -62,6 +47,12 @@ void NamedEasyLoger::ColorOutput(const std::string& text, WORD attribute) const
 {
 	SetConsoleTextAttribute(output_handle, attribute);
 	printf("%s - %s\n", name.c_str(), text.c_str());
+	SetConsoleTextAttribute(output_handle, default_attribute);
+}
+void NamedEasyLoger::ColorOutput(const long long num, WORD attribute) const
+{
+	SetConsoleTextAttribute(output_handle, attribute);
+	printf("%s - %lli\n", name.c_str(), num);
 	SetConsoleTextAttribute(output_handle, default_attribute);
 }
 
@@ -81,6 +72,16 @@ void TimedEasyLoger::ColorOutput(const std::string& text, WORD attribute) const
 
 	SetConsoleTextAttribute(output_handle, attribute);
 	printf("[%02u:%02u:%02u] - %s\n", timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec, text.c_str());
+	SetConsoleTextAttribute(output_handle, default_attribute);
+}
+void TimedEasyLoger::ColorOutput(const long long num, WORD attribute) const
+{
+	time_t now_time = time(NULL);
+	tm timeinfo = { 0 };
+	localtime_s(&timeinfo, &now_time);
+
+	SetConsoleTextAttribute(output_handle, attribute);
+	printf("[%02u:%02u:%02u] - %lli\n", timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec, num);
 	SetConsoleTextAttribute(output_handle, default_attribute);
 }
 
@@ -103,5 +104,15 @@ void NamedTimedEasyLoger::ColorOutput(const std::string& text, WORD attribute) c
 
 	SetConsoleTextAttribute(output_handle, attribute);
 	printf("%s[%02u:%02u:%02u] - %s\n", name.c_str(), timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec, text.c_str());
+	SetConsoleTextAttribute(output_handle, default_attribute);
+}
+void NamedTimedEasyLoger::ColorOutput(const long long num, WORD attribute) const
+{
+	time_t now_time = time(NULL);
+	tm timeinfo = { 0 };
+	localtime_s(&timeinfo, &now_time);
+
+	SetConsoleTextAttribute(output_handle, attribute);
+	printf("%s[%02u:%02u:%02u] - %lli\n", name.c_str(), timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec, num);
 	SetConsoleTextAttribute(output_handle, default_attribute);
 }
